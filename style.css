@@ -1,0 +1,63 @@
+/* baic setengs */
+body{
+    margin: 0;
+    padding: 0;
+
+}
+
+
+
+
+/*  */
+.container{
+    background: rgb(117, 255, 191);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+}
+.box-disply{
+    margin: auto;
+    background: rgb(211, 59, 48);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    height: 60vh;
+    width: 45vw;
+}
+.screen-disply{
+    width: 45vw;
+    height: 45vh;
+    background: rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: auto;
+    gap: 0.5rem;
+    grid-template-areas: 
+    'pixel pixel pixel'
+    'pixel pixel pixel'
+    'pixel pixel pixel'
+    ;
+}
+.pixel{
+    border: solid black;
+    background: rgb(118, 89, 145);
+    grid-area: pixel 1fr;
+}
+.controls{
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: auto auto;
+}
+.circle-butten{
+    background:   rgb(255, 255, 255);
+    border:0.7rem   solid #999999 ;
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    margin: 2rem;
+    width: 3rem;
+    height: 3rem;
+    
+
+}
