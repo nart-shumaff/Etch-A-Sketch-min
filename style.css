@@ -31,13 +31,14 @@ body{
     height: 45vh;
     background: rgb(255, 255, 255);
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: auto auto auto  ;
+    grid-template-rows: auto auto auto ;
     gap: 0.5rem;
-    grid-template-areas: 
+    /* grid-template-areas: 
     'pixel pixel pixel'
     'pixel pixel pixel'
     'pixel pixel pixel'
-    ;
+    ; */
 }
 .pixel{
     border: solid black;
@@ -60,4 +61,7 @@ body{
     height: 3rem;
     
 
+}
+.filled{
+    background: black;
 }
