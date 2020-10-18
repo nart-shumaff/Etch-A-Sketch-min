@@ -45,6 +45,10 @@ body{
     /* border: solid black; */
     background: rgb(255, 255, 255);
     grid-area: pixel 1fr;
+    
+}
+.now-pixel{
+    border: solid rgb(216, 231, 9);
 }
 .controls{
     display: grid;
