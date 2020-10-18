@@ -48,7 +48,8 @@ body{
     
 }
 .now-pixel{
-    border: solid rgb(216, 231, 9);
+    /* border: solid rgb(216, 231, 9) 0.1rem; */
+    border-radius: 0.8rem;
 }
 .controls{
     display: grid;
