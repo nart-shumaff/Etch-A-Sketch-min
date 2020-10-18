@@ -45,6 +45,8 @@ return DivArr2d ;
 //a funcsin thet move the pinter brist on an arowKey 
 document.addEventListener('keydown', ChangePleas );
 function ChangePleas (e){
+    //delet the new class
+    screenArr[LocationY[0]][LocationX[0]].classList.remove('now-pixel');
     // if the Location is out of screen dont move   
     if(e.code === 'ArrowDown' && screenArr.length - 1 >  LocationY[0]){
         LocationY[0] = LocationY[0] + 1;
@@ -66,11 +68,15 @@ function ChangePleas (e){
         console.log("good");
 
     }
+    
+    
     // if Location is filled dont fill it agine
     if (screenArr[LocationY[0]][LocationX[0]].classList[1] !== 'filled'){
     screenArr[LocationY[0]][LocationX[0]].classList.add('filled');
     console.log(screenArr[LocationY[0]][LocationX[0]].classList);
     }
+    // add a new class to the 
+    screenArr[LocationY[0]][LocationX[0]].classList.add('now-pixel');
 }
 
 
@@ -80,7 +86,7 @@ addEventListener('submit', val);
 //geting the input from the form to desid the size of the bord
 function val()
 {
-    
+
     const input = document.getElementById("userInput").value;
     // make sure thet input is a numbre 
     if (isNaN(input)){
