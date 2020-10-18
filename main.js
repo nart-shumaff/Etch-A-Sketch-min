@@ -18,16 +18,21 @@ LocationY[0] = 1
 // geanrit an 
 
 // get the node arrey 
-elementList = document.querySelectorAll('.screen-disply div');
-console.log(elementList)
-const sources = Array.from(elementList, item => item);
-console.log(sources)
+function getAllDivInScreen(numRow){
+    elementList = document.querySelectorAll('.screen-disply div');
+    console.log(elementList)
+    const sources = Array.from(elementList, item => item);
+    console.log(sources)
+    // make the div arr to 2d 
+    screenArr = arr1Dto2D(sources,numRow);
+}
+
 // convert the div node arrey to a 2d arrey 
-function arr1Dto2D(arr1 ){
+function arr1Dto2D(arr1 , numXnum){
 const arr = arr1;
     
 const DivArr2d = [];
-while(arr.length) DivArr2d.push(arr.splice(0,3));
+while(arr.length) DivArr2d.push(arr.splice(0,numXnum));
 return DivArr2d ;
 }
 // console.log(arr1Dto2D(sources));
@@ -36,7 +41,7 @@ return DivArr2d ;
 //ceaing 1 div proprty to filled
 
 // DivArr2d[1][0].classList.add('filled');
-screenArr = arr1Dto2D(sources);
+
 //a funcsin thet move the pinter brist on an arowKey 
 document.addEventListener('keydown', ChangePleas );
 function ChangePleas (e){
@@ -68,6 +73,35 @@ function ChangePleas (e){
     }
 }
 
+
 // screenArr = arr1Dto2D(sources);
 // screenArr[LocationY[0]][LocationX[0]].classList.add('filled');
+addEventListener('submit', val);
+//geting the input from the form to desid the size of the bord
+function val()
+{
+    
+    const input = document.getElementById("userInput").value;
+    // make sure thet input is a numbre 
+    if (isNaN(input)){
+        alert("enret only numbres")
+    }
+    //  create an elements
+    const DivNum = input * input;
+    for (let index = 0; index < DivNum; index++) {
+        
+        let newDivPixle = document.createElement('div');
+        console.log(newDivPixle)
+        newDivPixle.classList.add('pixel');
 
+        let screen = document.getElementsByClassName('screen-disply');
+        screen.item(0).appendChild(newDivPixle);
+        
+    }
+    const screen = document.getElementsByClassName("screen-disply");
+    screen.item(0).style.gridTemplateColumns = `repeat(${parseInt(input)},auto)`;
+    screen.item(0).style.gridTemplateRows = `repeat(${parseInt(input)},auto)`;
+
+    getAllDivInScreen(input);
+}
+// add grid-template-columns: repeat(arry lenghe,auto)
