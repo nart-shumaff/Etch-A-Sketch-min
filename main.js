@@ -78,21 +78,27 @@ function ChangePleas (e){
     // add a new class to the 
     screenArr[LocationY[0]][LocationX[0]].classList.add('now-pixel');
 }
-
-
+function removeElementsByClass(className){
+    var elements = document.getElementsByClassName(className);
+    while(elements.length > 0){
+        elements[0].parentNode.removeChild(elements[0]);
+    }
+}
 // screenArr = arr1Dto2D(sources);
 // screenArr[LocationY[0]][LocationX[0]].classList.add('filled');
 addEventListener('submit', val);
 //geting the input from the form to desid the size of the bord
 function val()
 {
+    // removeDivs()
+    removeElementsByClass('pixel'); 
 
     const input = document.getElementById("userInput").value;
     // make sure thet input is a numbre 
     if (isNaN(input)){
         alert("enret only numbres")
     }
-    //  create an elements
+    //  create the elements
     const DivNum = input * input;
     for (let index = 0; index < DivNum; index++) {
         
